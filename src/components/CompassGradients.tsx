@@ -6,10 +6,10 @@ interface CompassGradientsProps {
   windRoseRadius: number;
 }
 
-export const CompassGradients: React.FC<CompassGradientsProps> = ({
+export const CompassGradients = ({
   center,
   windRoseRadius,
-}) => {
+}: CompassGradientsProps) => {
   return (
     <>
       <Defs>

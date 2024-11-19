@@ -1,7 +1,7 @@
-import { FC, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import { Vibration } from "react-native";
 import { Circle, Line, Text as SvgText, G, Path } from "react-native-svg";
 import { getCompassPoints, isCardinalPointActive } from "../utils/compassUtils";
-import { Vibration } from "react-native";
 import { COLORS } from "../constants/compassConstants";
 
 interface CompassRoseProps {
@@ -11,12 +11,12 @@ interface CompassRoseProps {
   onCardinalPointChange?: (point: string) => void;
 }
 
-export const CompassRose: FC<CompassRoseProps> = ({
+export const CompassRose = ({
   center,
   windRoseRadius,
   degree,
   onCardinalPointChange,
-}) => {
+}: CompassRoseProps) => {
   const [lastActivePoint, setLastActivePoint] = useState<string | null>(null);
 
   useEffect(() => {

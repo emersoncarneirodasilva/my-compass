@@ -1,4 +1,3 @@
-import React from "react";
 import Svg, { Path, Circle } from "react-native-svg";
 import { COLORS } from "../constants/compassConstants";
 
@@ -7,10 +6,7 @@ interface CompassNeedleProps {
   needleLength: number;
 }
 
-export const CompassNeedle: React.FC<CompassNeedleProps> = ({
-  center,
-  needleLength,
-}) => {
+export const CompassNeedle = ({ center, needleLength }: CompassNeedleProps) => {
   const baseWidth = 16;
   const tipWidth = 1;
   const midPoint = needleLength * 0.3;

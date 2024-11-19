@@ -1,31 +1,27 @@
 import { useState } from "react";
-import { View, Text, ImageBackground } from "react-native";
-import Svg from "react-native-svg";
-import { useLocation } from "../hooks/useLocation";
-import { useMagnetometer } from "../hooks/useMagnetometer";
-import { CompassRose } from "../components/CompassRose";
-import { CompassNeedle } from "../components/CompassNeedle";
-import { CompassGradients } from "../components/CompassGradients";
-import { useStyles } from "../hooks/useStyles";
-import {
-  COMPASS_SIZE,
-  CENTER,
-  NEEDLE_LENGTH,
-  WIND_ROSE_RADIUS,
-} from "../constants/compassConstants";
+import { ImageBackground, TouchableOpacity, View, Text } from "react-native";
 import {
   useFonts,
   MeowScript_400Regular as MeowScript,
 } from "@expo-google-fonts/meow-script";
+import { useLocation } from "../hooks/useLocation";
+import { useMagnetometer } from "../hooks/useMagnetometer";
+import { useStyles } from "../hooks/useStyles";
+import { useTheme } from "../hooks/useTheme";
+import { THEME_CONFIG } from "../constants/themeConstants";
+import { CompassDisplay } from "../components/CompassDisplay";
+import { ThemeModal } from "../components/ThemeModal";
 
 export default function Index() {
   const [lastVibratedCardinal, setLastVibratedCardinal] = useState<
     string | null
   >(null);
   const [fontsLoaded] = useFonts({ MeowScript });
-  const styles = useStyles();
   const { magneticDeclination } = useLocation();
   const degree = useMagnetometer(magneticDeclination);
+  const styles = useStyles();
+  const { selectedTheme, modalVisible, setModalVisible, handleThemeSelect } =
+    useTheme();
 
   if (!fontsLoaded) {
     return null;
@@ -39,30 +35,31 @@ export default function Index() {
 
   return (
     <ImageBackground
-      source={require("@/src/assets/images/bgImg.png")}
+      source={THEME_CONFIG.backgroundImages[selectedTheme]}
       resizeMode="cover"
       style={styles.container}
     >
       <View style={styles.overlay} />
 
+      <TouchableOpacity
+        style={styles.menuButton}
+        onPress={() => setModalVisible(true)}
+      >
+        <Text style={styles.menuButtonText}>☰</Text>
+      </TouchableOpacity>
+
+      <ThemeModal
+        visible={modalVisible}
+        onClose={() => setModalVisible(false)}
+        onThemeSelect={handleThemeSelect}
+      />
+
       <Text style={styles.title}>My Compass</Text>
 
-      <View style={styles.compassContainer}>
-        <Svg
-          width={COMPASS_SIZE}
-          height={COMPASS_SIZE}
-          style={[styles.compass, { transform: [{ rotate: `${-degree}deg` }] }]}
-        >
-          <CompassGradients center={CENTER} windRoseRadius={WIND_ROSE_RADIUS} />
-          <CompassRose
-            center={CENTER}
-            windRoseRadius={WIND_ROSE_RADIUS}
-            degree={degree}
-            onCardinalPointChange={handleCardinalPointChange}
-          />
-        </Svg>
-        <CompassNeedle center={CENTER} needleLength={NEEDLE_LENGTH} />
-      </View>
+      <CompassDisplay
+        degree={degree}
+        onCardinalPointChange={handleCardinalPointChange}
+      />
 
       <Text style={styles.degrees}>{Math.round(degree)}°</Text>
     </ImageBackground>
