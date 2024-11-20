@@ -37,3 +37,15 @@ Para rodar o projeto localmente, siga os passos abaixo:
    expo start
    ```
 5. Escaneie o QR code com o Expo Go no seu dispositivo ou use o emulador.
+
+![WhatsApp Image 2024-11-19 at 22 48 47](https://github.com/user-attachments/assets/3b22586c-6b61-46ec-a89d-cc30afff5b85)
+
+![WhatsApp Image 2024-11-19 at 22 48 47 (1)](https://github.com/user-attachments/assets/55a2b51f-1d8b-428a-84b3-b2de059050b2)
+
+![WhatsApp Image 2024-11-19 at 22 48 47 (2)](https://github.com/user-attachments/assets/fdbb9fcf-b840-403d-8894-bbcc72aff1a1)
+
+![WhatsApp Image 2024-11-19 at 22 48 48](https://github.com/user-attachments/assets/34309fa5-5460-452e-9691-f3d975de6dee)
+
+
+
+   
