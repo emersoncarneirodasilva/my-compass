@@ -20,8 +20,8 @@ const ThemeContext = createContext<ThemeContextData | undefined>(undefined);
 
 const THEMES = {
   option1: {
-    PRIMARY_BROWN: "#8B4513",
-    ACTIVE_BROWN: "#CD853F",
+    PRIMARY_COLOR: "#8B4513",
+    ACTIVE_COLOR: "#CD853F",
     GRADIENT_START: "#FFF8DC",
     GRADIENT_MID: "#FFF8DC",
     GRADIENT_END: "#DEB887",
@@ -36,8 +36,8 @@ const THEMES = {
     SOUTH_DARK_BLUE: "#000066",
   },
   option2: {
-    PRIMARY_BROWN: "#114F8D",
-    ACTIVE_BROWN: "#4682B4",
+    PRIMARY_COLOR: "#114F8D",
+    ACTIVE_COLOR: "#4682B4",
     GRADIENT_START: "#B0E0E6",
     GRADIENT_MID: "#ADD8E6",
     GRADIENT_END: "#4682B4",
@@ -52,8 +52,8 @@ const THEMES = {
     SOUTH_DARK_BLUE: "#1C4F63",
   },
   option3: {
-    PRIMARY_BROWN: "#233D2B",
-    ACTIVE_BROWN: "#225c32",
+    PRIMARY_COLOR: "#233D2B",
+    ACTIVE_COLOR: "#225c32",
     GRADIENT_START: "#95AA8E",
     GRADIENT_MID: "#E8D6C0",
     GRADIENT_END: "#344B3B",
@@ -68,8 +68,8 @@ const THEMES = {
     SOUTH_DARK_BLUE: "#1A4758",
   },
   option4: {
-    PRIMARY_BROWN: "#6A7D85",
-    ACTIVE_BROWN: "#4F636C",
+    PRIMARY_COLOR: "#6A7D85",
+    ACTIVE_COLOR: "#4F636C",
     GRADIENT_START: "#1A252F",
     GRADIENT_MID: "#2A3C47",
     GRADIENT_END: "#3A4B56",

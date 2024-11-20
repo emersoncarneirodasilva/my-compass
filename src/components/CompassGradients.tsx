@@ -34,7 +34,7 @@ export const CompassGradients = ({
         cx={center}
         cy={center}
         r={center - 5}
-        stroke={currentColors.PRIMARY_BROWN}
+        stroke={currentColors.PRIMARY_COLOR}
         strokeWidth="3"
         fill="url(#compassGradient)"
       />
@@ -44,14 +44,14 @@ export const CompassGradients = ({
         cy={center}
         r={windRoseRadius}
         fill="url(#compassGradient)"
-        stroke={currentColors.PRIMARY_BROWN}
+        stroke={currentColors.PRIMARY_COLOR}
         strokeWidth="2"
       />
       <Circle
         cx={center}
         cy={center}
         r={windRoseRadius * 0.8}
-        stroke={currentColors.PRIMARY_BROWN}
+        stroke={currentColors.PRIMARY_COLOR}
         strokeWidth="0.5"
         fill="none"
       />
@@ -59,7 +59,7 @@ export const CompassGradients = ({
         cx={center}
         cy={center}
         r={windRoseRadius * 0.6}
-        stroke={currentColors.PRIMARY_BROWN}
+        stroke={currentColors.PRIMARY_COLOR}
         strokeWidth="0.5"
         fill="none"
       />
@@ -67,7 +67,7 @@ export const CompassGradients = ({
         cx={center}
         cy={center}
         r={windRoseRadius * 0.4}
-        stroke={currentColors.PRIMARY_BROWN}
+        stroke={currentColors.PRIMARY_COLOR}
         strokeWidth="0.5"
         fill="none"
       />

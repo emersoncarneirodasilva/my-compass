@@ -48,7 +48,7 @@ export const CompassRose = ({
           cx={center}
           cy={center}
           r={windRoseRadius * ratio}
-          stroke={currentColors.PRIMARY_BROWN}
+          stroke={currentColors.PRIMARY_COLOR}
           strokeWidth="0.5"
           fill="none"
         />
@@ -66,7 +66,7 @@ export const CompassRose = ({
             L ${center + windRoseRadius * Math.sin((angle * Math.PI) / 180)} 
               ${center - windRoseRadius * Math.cos((angle * Math.PI) / 180)}
           `}
-          stroke={currentColors.PRIMARY_BROWN}
+          stroke={currentColors.PRIMARY_COLOR}
           strokeWidth="2"
         />
       );
@@ -85,7 +85,7 @@ export const CompassRose = ({
             L ${center + midPoint * Math.sin((angle * Math.PI) / 180)} 
               ${center - midPoint * Math.cos((angle * Math.PI) / 180)}
           `}
-          stroke={currentColors.PRIMARY_BROWN}
+          stroke={currentColors.PRIMARY_COLOR}
           strokeWidth="1.5"
         />
       );
@@ -106,7 +106,7 @@ export const CompassRose = ({
             L ${center + outerRadius * Math.sin((angle * Math.PI) / 180)}
               ${center - outerRadius * Math.cos((angle * Math.PI) / 180)}
           `}
-          stroke={currentColors.PRIMARY_BROWN}
+          stroke={currentColors.PRIMARY_COLOR}
           strokeWidth="0.5"
           opacity="0.6"
         />
@@ -138,8 +138,8 @@ export const CompassRose = ({
             y2={60}
             stroke={
               isActive
-                ? currentColors.ACTIVE_BROWN
-                : currentColors.PRIMARY_BROWN
+                ? currentColors.ACTIVE_COLOR
+                : currentColors.PRIMARY_COLOR
             }
             strokeWidth={point.label.length === 1 ? "2.5" : "1.5"}
           />
@@ -149,8 +149,8 @@ export const CompassRose = ({
             textAnchor="middle"
             fill={
               isActive
-                ? currentColors.ACTIVE_BROWN
-                : currentColors.PRIMARY_BROWN
+                ? currentColors.ACTIVE_COLOR
+                : currentColors.PRIMARY_COLOR
             }
             fontSize={fontSize}
             fontWeight={point.label.length === 1 ? "bold" : "normal"}

@@ -59,7 +59,7 @@ export const CompassNeedle = ({ center, needleLength }: CompassNeedleProps) => {
         cy={center}
         r={12}
         fill="url(#centerGradient)"
-        stroke={currentColors.PRIMARY_BROWN}
+        stroke={currentColors.PRIMARY_COLOR}
         strokeWidth="1"
       />
       <Circle
@@ -67,7 +67,7 @@ export const CompassNeedle = ({ center, needleLength }: CompassNeedleProps) => {
         cy={center}
         r={8}
         fill="url(#innerCenterGradient)"
-        stroke={currentColors.PRIMARY_BROWN}
+        stroke={currentColors.PRIMARY_COLOR}
         strokeWidth="0.5"
       />
       <Circle cx={center} cy={center} r={3} fill={currentColors.CENTER_GRAY} />

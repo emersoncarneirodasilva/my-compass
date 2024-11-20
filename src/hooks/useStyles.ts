@@ -20,7 +20,7 @@ export const useStyles = () => {
       fontSize: 56,
       fontFamily: "MeowScript",
       marginBottom: 20,
-      color: currentColors.PRIMARY_BROWN,
+      color: currentColors.PRIMARY_COLOR,
     },
     compassContainer: {
       position: "relative",
@@ -45,7 +45,7 @@ export const useStyles = () => {
       fontWeight: "bold",
       fontSize: 32,
       marginTop: 20,
-      color: currentColors.PRIMARY_BROWN,
+      color: currentColors.PRIMARY_COLOR,
     },
     menuButton: {
       position: "absolute",
