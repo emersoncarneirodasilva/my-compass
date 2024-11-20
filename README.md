@@ -1,51 +1,39 @@
-# Welcome to your Expo app 👋
+# My Compass 🧭
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+**My Compass** é um aplicativo de bússola simples e intuitivo, desenvolvido com React Native, Expo e TypeScript. Ele oferece uma maneira fácil e rápida de obter informações sobre a direção, ajudando os usuários a se orientarem em qualquer lugar, a qualquer momento. A interface foi projetada para ser minimalista e fácil de usar, permitindo que você acesse as funcionalidades principais com apenas alguns toques.
 
-## Get started
+## Funcionalidades
 
-1. Install dependencies
+- **Orientação em tempo real**: Exibe a direção atual com base na bússola do dispositivo.
+- **Interface simples e intuitiva**: Design minimalista para fácil navegação e uso.
+- **Precisão**: Utiliza sensores do dispositivo para fornecer dados precisos de direção.
+- **Compatibilidade**: Desenvolvido para funcionar em dispositivos móveis com iOS e Android.
 
+## Tecnologias Usadas
+
+- **React Native**: Framework para desenvolvimento de aplicativos móveis nativos.
+- **Expo**: Plataforma para facilitar o desenvolvimento e a execução de aplicativos React Native.
+- **TypeScript**: Superset de JavaScript para melhorar a manutenção e escalabilidade do código.
+
+## Instalação
+
+Para rodar o projeto localmente, siga os passos abaixo:
+
+1. Clone o repositório:
+
+   ```bash
+   git clone https://github.com/emersoncarneirodasilva/my-compass.git
+   ```
+2. Navegue até o diretório do projeto:
+   ```bash
+   cd my-compass
+   ```
+3. Instale as dependências:
    ```bash
    npm install
    ```
-
-2. Start the app
-
+4. Inicie o aplicativo no modo de desenvolvimento:
    ```bash
-    npx expo start
+   expo start
    ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
-# my-compass
+5. Escaneie o QR code com o Expo Go no seu dispositivo ou use o emulador.
