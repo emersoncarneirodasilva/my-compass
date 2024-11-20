@@ -1,5 +1,5 @@
 import Svg, { Path, Circle } from "react-native-svg";
-import { COLORS } from "../constants/compassConstants";
+import { useTheme } from "../contexts/ThemeContext";
 
 interface CompassNeedleProps {
   center: number;
@@ -7,6 +7,8 @@ interface CompassNeedleProps {
 }
 
 export const CompassNeedle = ({ center, needleLength }: CompassNeedleProps) => {
+  const { currentColors } = useTheme();
+
   const baseWidth = 16;
   const tipWidth = 1;
   const midPoint = needleLength * 0.3;
@@ -29,8 +31,8 @@ export const CompassNeedle = ({ center, needleLength }: CompassNeedleProps) => {
           L ${center + baseWidth / 2} ${center}
           Z
         `}
-        fill={COLORS.NORTH_RED}
-        stroke={COLORS.NORTH_DARK_RED}
+        fill={currentColors.NORTH_RED}
+        stroke={currentColors.NORTH_DARK_RED}
         strokeWidth="1"
       />
 
@@ -46,8 +48,8 @@ export const CompassNeedle = ({ center, needleLength }: CompassNeedleProps) => {
           L ${center + baseWidth / 2} ${center}
           Z
         `}
-        fill={COLORS.SOUTH_BLUE}
-        stroke={COLORS.SOUTH_DARK_BLUE}
+        fill={currentColors.SOUTH_BLUE}
+        stroke={currentColors.SOUTH_DARK_BLUE}
         strokeWidth="1"
       />
 
@@ -57,7 +59,7 @@ export const CompassNeedle = ({ center, needleLength }: CompassNeedleProps) => {
         cy={center}
         r={12}
         fill="url(#centerGradient)"
-        stroke={COLORS.PRIMARY_BROWN}
+        stroke={currentColors.PRIMARY_BROWN}
         strokeWidth="1"
       />
       <Circle
@@ -65,10 +67,10 @@ export const CompassNeedle = ({ center, needleLength }: CompassNeedleProps) => {
         cy={center}
         r={8}
         fill="url(#innerCenterGradient)"
-        stroke={COLORS.PRIMARY_BROWN}
+        stroke={currentColors.PRIMARY_BROWN}
         strokeWidth="0.5"
       />
-      <Circle cx={center} cy={center} r={3} fill={COLORS.CENTER_GRAY} />
+      <Circle cx={center} cy={center} r={3} fill={currentColors.CENTER_GRAY} />
     </Svg>
   );
 };

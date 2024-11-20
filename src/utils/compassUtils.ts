@@ -1,12 +1,15 @@
 export const calculateAngle = (
   x: number,
   y: number,
-  magneticDeclination: number
+  magneticDeclination: number,
+  latitude: number | null
 ): number => {
   let angle = Math.atan2(-x, y) * (180 / Math.PI);
   angle = angle < 0 ? angle + 360 : angle;
 
-  let correctedAngle = angle - magneticDeclination;
+  let correctedAngle =
+    latitude! > 0 ? angle + magneticDeclination : angle - magneticDeclination;
+
   if (correctedAngle < 0) {
     correctedAngle += 360;
   } else if (correctedAngle >= 360) {

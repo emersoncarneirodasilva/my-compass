@@ -7,10 +7,10 @@ import {
 import { useLocation } from "../hooks/useLocation";
 import { useMagnetometer } from "../hooks/useMagnetometer";
 import { useStyles } from "../hooks/useStyles";
-import { useTheme } from "../hooks/useTheme";
 import { THEME_CONFIG } from "../constants/themeConstants";
 import { CompassDisplay } from "../components/CompassDisplay";
 import { ThemeModal } from "../components/ThemeModal";
+import { useTheme } from "../contexts/ThemeContext";
 
 export default function Index() {
   const [lastVibratedCardinal, setLastVibratedCardinal] = useState<
@@ -20,7 +20,7 @@ export default function Index() {
   const { magneticDeclination } = useLocation();
   const degree = useMagnetometer(magneticDeclination);
   const styles = useStyles();
-  const { selectedTheme, modalVisible, setModalVisible, handleThemeSelect } =
+  const { modalVisible, selectedTheme, setModalVisible, handleThemeSelect } =
     useTheme();
 
   if (!fontsLoaded) {

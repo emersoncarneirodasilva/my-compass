@@ -1,7 +1,10 @@
 import { StyleSheet } from "react-native";
-import { COLORS, COMPASS_SIZE } from "../constants/compassConstants";
+import { COMPASS_SIZE } from "../constants/compassConstants";
+import { useTheme } from "../contexts/ThemeContext";
 
 export const useStyles = () => {
+  const { currentColors } = useTheme();
+
   return StyleSheet.create({
     container: {
       flex: 1,
@@ -17,7 +20,7 @@ export const useStyles = () => {
       fontSize: 56,
       fontFamily: "MeowScript",
       marginBottom: 20,
-      color: COLORS.PRIMARY_BROWN,
+      color: currentColors.PRIMARY_BROWN,
     },
     compassContainer: {
       position: "relative",
@@ -42,7 +45,7 @@ export const useStyles = () => {
       fontWeight: "bold",
       fontSize: 32,
       marginTop: 20,
-      color: COLORS.PRIMARY_BROWN,
+      color: currentColors.PRIMARY_BROWN,
     },
     menuButton: {
       position: "absolute",

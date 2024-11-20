@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Vibration } from "react-native";
 import { Circle, Line, Text as SvgText, G, Path } from "react-native-svg";
 import { getCompassPoints, isCardinalPointActive } from "../utils/compassUtils";
-import { COLORS } from "../constants/compassConstants";
+import { useTheme } from "../contexts/ThemeContext";
 
 interface CompassRoseProps {
   center: number;
@@ -18,6 +18,7 @@ export const CompassRose = ({
   onCardinalPointChange,
 }: CompassRoseProps) => {
   const [lastActivePoint, setLastActivePoint] = useState<string | null>(null);
+  const { currentColors } = useTheme();
 
   useEffect(() => {
     const points = getCompassPoints();
@@ -47,7 +48,7 @@ export const CompassRose = ({
           cx={center}
           cy={center}
           r={windRoseRadius * ratio}
-          stroke={COLORS.PRIMARY_BROWN}
+          stroke={currentColors.PRIMARY_BROWN}
           strokeWidth="0.5"
           fill="none"
         />
@@ -65,7 +66,7 @@ export const CompassRose = ({
             L ${center + windRoseRadius * Math.sin((angle * Math.PI) / 180)} 
               ${center - windRoseRadius * Math.cos((angle * Math.PI) / 180)}
           `}
-          stroke={COLORS.PRIMARY_BROWN}
+          stroke={currentColors.PRIMARY_BROWN}
           strokeWidth="2"
         />
       );
@@ -84,7 +85,7 @@ export const CompassRose = ({
             L ${center + midPoint * Math.sin((angle * Math.PI) / 180)} 
               ${center - midPoint * Math.cos((angle * Math.PI) / 180)}
           `}
-          stroke={COLORS.PRIMARY_BROWN}
+          stroke={currentColors.PRIMARY_BROWN}
           strokeWidth="1.5"
         />
       );
@@ -105,7 +106,7 @@ export const CompassRose = ({
             L ${center + outerRadius * Math.sin((angle * Math.PI) / 180)}
               ${center - outerRadius * Math.cos((angle * Math.PI) / 180)}
           `}
-          stroke={COLORS.PRIMARY_BROWN}
+          stroke={currentColors.PRIMARY_BROWN}
           strokeWidth="0.5"
           opacity="0.6"
         />
@@ -135,14 +136,22 @@ export const CompassRose = ({
             y1={40}
             x2={center}
             y2={60}
-            stroke={isActive ? COLORS.ACTIVE_BROWN : COLORS.PRIMARY_BROWN}
+            stroke={
+              isActive
+                ? currentColors.ACTIVE_BROWN
+                : currentColors.PRIMARY_BROWN
+            }
             strokeWidth={point.label.length === 1 ? "2.5" : "1.5"}
           />
           <SvgText
             x={center}
             y={distance}
             textAnchor="middle"
-            fill={isActive ? COLORS.ACTIVE_BROWN : COLORS.PRIMARY_BROWN}
+            fill={
+              isActive
+                ? currentColors.ACTIVE_BROWN
+                : currentColors.PRIMARY_BROWN
+            }
             fontSize={fontSize}
             fontWeight={point.label.length === 1 ? "bold" : "normal"}
             fontFamily="serif"
