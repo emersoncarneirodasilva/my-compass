@@ -4,7 +4,7 @@
 
 ## Funcionalidades
 
-- **Orientação em tempo real**: Exibe a direção atual com base na bússola do dispositivo.
+- **Orientação em tempo real**: Exibe a direção atual com base nos sensores do dispositivo.
 - **Interface simples e intuitiva**: Design minimalista para fácil navegação e uso.
 - **Precisão**: Utiliza sensores do dispositivo para fornecer dados precisos de direção.
 - **Compatibilidade**: Desenvolvido para funcionar em dispositivos móveis com iOS e Android.
